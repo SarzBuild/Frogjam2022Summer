@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using System.Reflection;
 
 namespace GeneralJTUtils
 {
@@ -43,6 +44,32 @@ namespace GeneralJTUtils
             Assert.IsTrue(positions.Count < 2, "The range check called only takes two positions as parameters, extra positions in the list are discarded");
             float distance = Vector3.Distance(positions[0], positions[1]);
             return distance <= range;
+        }
+        
+        public static void CheckForComponents(List<Component> components, Transform objectFromWhichToCheck)
+        {
+            for (int i = 0; i < components.Count; i++)
+            {
+                if (components[i] == null)
+                {
+                    /*string typeName = components[i].name;
+                    components[i] = objectFromWhichToCheck.GetComponent(System.GetType(typeName) as components[i].ty);
+
+                    /*components[i]
+                        .GetType()
+                        .GetMethod(
+                            components[i].name, 
+                            BindingFlags.Public | 
+                            BindingFlags.Instance)
+                        ?.Invoke(
+                            objectFromWhichToCheck
+                                .GetComponent(
+                                    components[i]
+                                        .GetType()), 
+                            new System.Object[] {components[i]});*/
+
+                }
+            }
         }
     }
 }

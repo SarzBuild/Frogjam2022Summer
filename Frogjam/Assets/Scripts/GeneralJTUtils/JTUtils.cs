@@ -46,6 +46,21 @@ namespace GeneralJTUtils
             return distance <= range;
         }
         
+        public static Vector2 GetMousePositionWorld2D(Camera mainCamera)
+        {
+            Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            return new Vector2(mousePosition.x, mousePosition.y);
+        }
+        
+        public static void SetAnimations(Animator animator, string active, List<string> inactive)
+        {
+            animator.SetBool(active,true);
+            foreach (var i in inactive)
+            {
+                animator.SetBool(i,false);    
+            }
+        }
+
         public static void CheckForComponents(List<Component> components, Transform objectFromWhichToCheck)
         {
             for (int i = 0; i < components.Count; i++)

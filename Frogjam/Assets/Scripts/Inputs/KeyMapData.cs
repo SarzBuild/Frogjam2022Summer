@@ -11,6 +11,7 @@ public class KeyMapData : ScriptableObject
 {
     public KeyData MouseRightKey;
     public KeyData MouseLeftKey;
-    
+    public KeyData JumpKey;
+
     //TODO Gotta add more keys
 }

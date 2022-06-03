@@ -12,7 +12,7 @@ namespace PhysicsComponents
         [SerializeField] private protected bool _canSetVelocity;
         [SerializeField] public Vector2 _appliedVelocity;
         [SerializeField] private Vector2 _currentVelocity;
-        [SerializeField] private Rigidbody2D _rigidbody2D;
+        [SerializeField] protected Rigidbody2D _rigidbody2D;
 
         public void ApplyVelocity() => _currentVelocity = _rigidbody2D.velocity;
     
@@ -37,6 +37,18 @@ namespace PhysicsComponents
         public void SetVelocityY(float velocity)
         {
             _appliedVelocity = new Vector2(_currentVelocity.x, velocity);
+            SetFinalVelocity();
+        }
+        
+        public void SetVelocity(float velocity, Vector2 direction)
+        {
+            _appliedVelocity = direction * velocity;
+            SetFinalVelocity();
+        }
+
+        public void SetVelocity(Vector2 velocity)
+        {
+            _appliedVelocity = velocity;
             SetFinalVelocity();
         }
         

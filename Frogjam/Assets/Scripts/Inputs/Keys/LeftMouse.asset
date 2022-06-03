@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54e5ac31a6c98ce49a2042fa868e1ca4, type: 3}
-  m_Name: SpaceBar
+  m_Name: LeftMouse
   m_EditorClassIdentifier: 
-  _key: 32
-  _keyDownTime: 31.159077
+  _key: 323
+  _keyDownTime: 23.990662
   _keyUpTime: 0

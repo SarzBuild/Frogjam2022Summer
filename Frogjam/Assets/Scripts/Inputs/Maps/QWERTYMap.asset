@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c921a72ade063eb4b8397f40068ad844, type: 3}
   m_Name: QWERTYMap
   m_EditorClassIdentifier: 
-  MouseRightKey: {fileID: 0}
-  MouseLeftKey: {fileID: 0}
+  MouseRightKey: {fileID: 11400000, guid: d75891fc158fa014193e66c245dcc837, type: 2}
+  MouseLeftKey: {fileID: 11400000, guid: 0a8ba4c75227d484a802d5754d6f5c74, type: 2}
+  JumpKey: {fileID: 11400000, guid: d75891fc158fa014193e66c245dcc837, type: 2}

@@ -14,9 +14,9 @@ TagManager:
   - TicTacToeBoard
   - TicTacToeBag
   - Bullet
-  - 
-  - 
-  - 
+  - ObjectBag
+  - PickableObject
+  - Ground
   - 
   - 
   - 

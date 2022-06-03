@@ -11,21 +11,22 @@ public class BulletHellCharacter : MonoBehaviour
     private void Update()
     {
         Vector2 mousePosition = GetMousePositionInWorld();
-        Vector2 movementDelta = (mousePosition - new Vector2(transform.position.x, transform.position.y)).normalized;
-        float angleDelta = Vector2.Dot(_rigidbody.velocity, movementDelta);
+        // ATTEMPT AT PHYSICS BASED
+        //Vector2 movementDelta = (mousePosition - new Vector2(transform.position.x, transform.position.y)).normalized;
+        //float angleDelta = Vector2.Dot(_rigidbody.velocity, movementDelta);
 
-        if (angleDelta > 0)
-        {
-            _rigidbody.AddForce(_speed * movementDelta);
-        }
-        else
-        {
-            _rigidbody.velocity = _rigidbody.velocity * (angleDelta + 1);
-            _rigidbody.AddForce(_speed * movementDelta);
-        }
+        //if (angleDelta > 0)
+        //{
+        //    _rigidbody.AddForce(_speed * movementDelta);
+        //}
+        //else
+        //{
+        //    _rigidbody.velocity = _rigidbody.velocity * (angleDelta + 1);
+        //    _rigidbody.AddForce(_speed * movementDelta);
+        //}
 
-        
-        // if moving away from the mouse, decelerate
+
+        transform.position = mousePosition;
 
     }
 

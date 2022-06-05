@@ -107,8 +107,9 @@ public class BulletSpawner : MonoBehaviour
             // Instantiate bullet
             GameObject bullet = Instantiate(Bullet, transform.position, Quaternion.identity);
             _bullets.Add(bullet);
-            if(firingMode.AffectedByGravity)
+            if(firingMode.ShootsTears)
             {
+                bullet.GetComponent<Bullet>().BecomeTear();
                 bullet.GetComponent<Rigidbody2D>().gravityScale = 1;
                 // TODO: replace sprite with tears
                 // bullet.GetComponent<SpriteRenderer>().Sprite = tearSprite;

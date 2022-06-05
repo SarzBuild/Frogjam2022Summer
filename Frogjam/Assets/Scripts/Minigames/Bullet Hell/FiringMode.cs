@@ -12,9 +12,9 @@ public class FiringMode : MonoBehaviour
     public float ShiftAngles; // Used by the sprinkler to change the firing angle after each shot
     public float Duration;
     public bool AimAtPlayer;
-    public bool AffectedByGravity;
+    public bool ShootsTears;
 
-    public FiringMode(float[] firingAngles, float rateOfFire, float bulletSpeed, float firingAngleVariance, float shiftAngles, float duration, bool aimAtPlayer, bool affectedByGravity)
+    public FiringMode(float[] firingAngles, float rateOfFire, float bulletSpeed, float firingAngleVariance, float shiftAngles, float duration, bool aimAtPlayer, bool shootsTears)
     {
         FiringAngles = firingAngles;
         RateOfFire = rateOfFire;
@@ -23,7 +23,7 @@ public class FiringMode : MonoBehaviour
         ShiftAngles = shiftAngles;
         Duration = duration;
         AimAtPlayer = aimAtPlayer;
-        AffectedByGravity = affectedByGravity;
+        ShootsTears = shootsTears;
     }
 
 }

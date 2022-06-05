@@ -12,6 +12,7 @@ public class BulletHellCharacter : MonoBehaviour
     [Header("Parameters")]
     public float MaxHitPoints;
     [SerializeField] private float _minimumSpeed;
+    public bool DEBUG_GRADIENTMOVEMENT;
 
     private Rigidbody2D _rigidbody;
     private float _speed;
@@ -29,22 +30,27 @@ public class BulletHellCharacter : MonoBehaviour
         // Real simple movement
         Vector2 mousePosition = GetMousePositionInWorld();
         float distanceToTarget = (mousePosition - new Vector2(transform.position.x, transform.position.y)).magnitude;
-        
-        // Gradient speed option
-        //_speed = Mathf.Ceil(Mathf.Pow(distanceToTarget, 2));
-        //if(_speed < _minimumSpeed)
-        //{
-        //    _speed = _minimumSpeed;
-        //}
 
-        // Binary speed option
-        if(distanceToTarget < 1)
+        if(DEBUG_GRADIENTMOVEMENT)
         {
-            _speed = _minimumSpeed;
+            // Gradient speed option
+            _speed = Mathf.Ceil(Mathf.Pow(distanceToTarget, 2));
+            if (_speed < _minimumSpeed)
+            {
+                _speed = _minimumSpeed;
+            }
         }
         else
         {
-            _speed = _minimumSpeed * 2;
+            // Binary speed option
+            if (distanceToTarget < 1)
+            {
+                _speed = _minimumSpeed;
+            }
+            else
+            {
+                _speed = _minimumSpeed * 2;
+            }
         }
 
         transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), mousePosition, _speed * Time.deltaTime);

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f10d48919d455281762a2cdd604e42, type: 3}
   m_Name: newLine
   m_EditorClassIdentifier: 
-  Input: Here is just a little test for you too see.
-  Delay: 0.2
-  DelayBeforeNextLine: 5
+  Input: . . .
+  Delay: 1.5
+  DelayBeforeNextLine: 8

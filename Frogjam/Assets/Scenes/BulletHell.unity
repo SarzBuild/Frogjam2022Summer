@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 587605567}
   - component: {fileID: 587605566}
   - component: {fileID: 587605565}
+  - component: {fileID: 587605568}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -249,6 +250,7 @@ MonoBehaviour:
   _timerOfDoom: {fileID: 588410986}
   MaxHitPoints: 5
   _minimumSpeed: 4
+  DEBUG_GRADIENTMOVEMENT: 0
   CurrentHitPoints: 0
 --- !u!58 &587605567
 CircleCollider2D:
@@ -266,6 +268,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &587605568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587605562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239a865bd2be5624b9c65735583bffa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentPhase: 0
 --- !u!1 &588410984
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 587605566}
-  Bullet: {fileID: 3148298462745033659, guid: 151e8818120c9b040b54ad0b2a46887e, type: 3}
+  BulletObject: {fileID: 3148298462745033659, guid: 151e8818120c9b040b54ad0b2a46887e, type: 3}
   MachineGun: {fileID: 0}
   Sprinkler: {fileID: 0}
   QuadShot: {fileID: 0}

@@ -5,13 +5,15 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     public BulletHellCharacter Player;
-    public GameObject Bullet;
+    public GameObject BulletObject;
 
     // Store data for different bullet patterns (aka firing modes)
     [HideInInspector] public FiringMode MachineGun;
     [HideInInspector] public FiringMode Sprinkler;
     [HideInInspector] public FiringMode QuadShot;
     [HideInInspector] public FiringMode Tears;
+
+    
 
     // Current firing mode
     [HideInInspector] public FiringMode CurrentFiringMode;
@@ -28,20 +30,20 @@ public class BulletSpawner : MonoBehaviour
 
     private void Awake()
     {
-        // Define firing modes (I really should have used scriptable objects lol)
+        // Define firing modes (this got so messy! I really should have used scriptable objects lol)
         float[] machineGunAngles = new float[1];
-        MachineGun = new FiringMode(machineGunAngles, 0.05f, 5f, 20, 0, 1.5f, true, false);
+        MachineGun = new FiringMode(machineGunAngles, 0.05f, 5f, 20, 0, 1f, true, Bullet.BulletTypes.Small);
         FiringModeList.Add(MachineGun);
         float[] sprinklerAngles = new float[1];
         sprinklerAngles[0] = Random.Range(0f, 360f);
-        Sprinkler = new FiringMode(sprinklerAngles, 0.1f, 1f, 0, 25, 4, false, false);
+        Sprinkler = new FiringMode(sprinklerAngles, 0.1f, 1f, 0, 25, 4, false, Bullet.BulletTypes.Large);
         FiringModeList.Add(Sprinkler);
         float[] quadShotAngles = new float[4];
         quadShotAngles[0] = 15;
         quadShotAngles[1] = 30;
         quadShotAngles[2] = - 15;
         quadShotAngles[3] = - 30;
-        QuadShot = new FiringMode(quadShotAngles, 0.4f, 2f, 10, 0, 3, true, false);
+        QuadShot = new FiringMode(quadShotAngles, 0.4f, 2f, 10, 0, 3, true, Bullet.BulletTypes.Small);
         FiringModeList.Add(QuadShot);
         float[] tearsAngles = new float[6];
         tearsAngles[0] = 60;
@@ -50,7 +52,7 @@ public class BulletSpawner : MonoBehaviour
         tearsAngles[3] = 110;
         tearsAngles[4] = 115;
         tearsAngles[5] = 120;
-        Tears = new FiringMode(tearsAngles, 0.6f, 3f, 0, 0, 5, false, true);
+        Tears = new FiringMode(tearsAngles, 0.6f, 6f, 0, 0, 5, false, Bullet.BulletTypes.Tear);
         SwitchFiringMode();
         // List of bullets, to despawn them later
         _bullets = new List<GameObject>();
@@ -105,15 +107,9 @@ public class BulletSpawner : MonoBehaviour
         for (int x = 0; x < firingMode.FiringAngles.Length; x++)
         {
             // Instantiate bullet
-            GameObject bullet = Instantiate(Bullet, transform.position, Quaternion.identity);
+            GameObject bullet = Instantiate(BulletObject, transform.position, Quaternion.identity);
             _bullets.Add(bullet);
-            if(firingMode.ShootsTears)
-            {
-                bullet.GetComponent<Bullet>().BecomeTear();
-                bullet.GetComponent<Rigidbody2D>().gravityScale = 1;
-                // TODO: replace sprite with tears
-                // bullet.GetComponent<SpriteRenderer>().Sprite = tearSprite;
-            }
+            bullet.GetComponent<Bullet>().SetType(firingMode.BulletType);
             // Set angle and speed
             float angleRadians = firingMode.FiringAngles[x] * Mathf.PI / 180; // convert to radians
             // Get angle towards player

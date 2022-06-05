@@ -13,8 +13,9 @@ public class FiringMode : MonoBehaviour
     public float Duration;
     public bool AimAtPlayer;
     public bool ShootsTears;
+    public Bullet.BulletTypes BulletType;
 
-    public FiringMode(float[] firingAngles, float rateOfFire, float bulletSpeed, float firingAngleVariance, float shiftAngles, float duration, bool aimAtPlayer, bool shootsTears)
+    public FiringMode(float[] firingAngles, float rateOfFire, float bulletSpeed, float firingAngleVariance, float shiftAngles, float duration, bool aimAtPlayer, Bullet.BulletTypes type)
     {
         FiringAngles = firingAngles;
         RateOfFire = rateOfFire;
@@ -23,7 +24,7 @@ public class FiringMode : MonoBehaviour
         ShiftAngles = shiftAngles;
         Duration = duration;
         AimAtPlayer = aimAtPlayer;
-        ShootsTears = shootsTears;
+        BulletType = type;
     }
 
 }

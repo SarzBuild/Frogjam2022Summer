@@ -12,4 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68b9fe974d9c264ca2ebec81ad1bd47, type: 3}
   m_Name: newDialogue A
   m_EditorClassIdentifier: 
-  LineSequence: []
+  LineSequence:
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}

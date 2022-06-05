@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68b9fe974d9c264ca2ebec81ad1bd47, type: 3}
+  m_Name: newDialogue D
+  m_EditorClassIdentifier: 
+  LineSequence:
+  - {fileID: 11400000, guid: 08c07f4b1947aa144a5677c64a4b2ddf, type: 2}
+  - {fileID: 11400000, guid: 376f5d5aa01e1b54db61fccdf592e304, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 9fcef73c2b4886f48994742e82952aff, type: 2}
+  - {fileID: 11400000, guid: fd8245e76fca31d4cb5d388e7c2fd5e2, type: 2}
+  - {fileID: 11400000, guid: 4d761feec0a3a9c48aa6e4ac17a7c6eb, type: 2}
+  - {fileID: 11400000, guid: 3250998f37d28ec4bb6a2e798aeea491, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: c82e1c5cefc39fa419fd875e326a9d0a, type: 2}
+  - {fileID: 11400000, guid: 7aad0a6057b12ec4a9132550392f18f5, type: 2}
+  - {fileID: 11400000, guid: f62135ac2d0f52c4689b4457e119b2f3, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 71c402d092abb4c4ab31922da971e92b, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 2eb6a21a4cb0ebe4fb5f1517b4a07cd2, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: d0429ee9b1d26504b8105d05d97b9cdd, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: 97971faf02a93a747bc708d83d668d98, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  - {fileID: 11400000, guid: ba9b99a4b884ec8498bd700ac7962be0, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}

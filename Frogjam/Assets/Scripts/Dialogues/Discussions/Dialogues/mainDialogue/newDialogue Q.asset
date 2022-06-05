@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68b9fe974d9c264ca2ebec81ad1bd47, type: 3}
+  m_Name: newDialogue Q
+  m_EditorClassIdentifier: 
+  LineSequence:
+  - {fileID: 11400000, guid: 0419442481d163645a16e80a98973b63, type: 2}
+  - {fileID: 11400000, guid: 6e267400d0188a44cb8787d50243abdf, type: 2}
+  - {fileID: 11400000, guid: dbe5825e3580b95478f4a53150b0e75d, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}

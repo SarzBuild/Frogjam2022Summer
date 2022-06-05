@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Events;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,11 +12,15 @@ namespace Dialogues
     {
         [SerializeField] public GameObject DialogueMenuObject;
         [SerializeField] public TextMeshProUGUI TextHolder;
+        [SerializeField] public GameEvent DialogueStartEvent;
+        [SerializeField] public GameEvent DialogueEndEvent;
 
-        public IEnumerator DialogueSequence(List<LineData> currentDialogue)
+        public IEnumerator DialogueSequence(DialogueData dialogue)
         {
             JTUtils.ToggleObjects(new List<GameObject>(){DialogueMenuObject},true);
-
+            DialogueStartEvent.Event.Raise();
+            var currentDialogue = dialogue.LineSequence;
+            
             if (TextHolder.text != "") //Checks to see if the base object is empty, if not, sets to empty.
             {
                 TextHolder.text = "";
@@ -42,7 +47,7 @@ namespace Dialogues
                     TextHolder.text = "";
                 }
             }
-        
+            DialogueEndEvent.Event.Raise();
             JTUtils.ToggleObjects(new List<GameObject>(){DialogueMenuObject},false);
         }
     }

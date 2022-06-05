@@ -10,8 +10,7 @@ namespace Events
     [CreateAssetMenu(fileName = "newGameEvent", menuName = "Data/Events/GameEvent", order = 0)]
     public class GameEventData : ScriptableObject
     {
-        
-        private readonly List<GameEventListener> _eventListeners = new List<GameEventListener>();
+        private readonly List<GameEvent> _eventListeners = new List<GameEvent>();
 
         //Function to call to activate the event. Use 'EventName'.Raise() to call it.
         public void Raise() 
@@ -20,13 +19,13 @@ namespace Events
                 _eventListeners[i].OnEventRaised();
         }
 
-        public void RegisterListener(GameEventListener listener)
+        public void RegisterListener(GameEvent listener)
         {
             if (!_eventListeners.Contains(listener))
                 _eventListeners.Add(listener);
         }
 
-        public void UnregisterListener(GameEventListener listener)
+        public void UnregisterListener(GameEvent listener)
         {
             if (_eventListeners.Contains(listener))
                 _eventListeners.Remove(listener);

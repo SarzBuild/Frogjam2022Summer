@@ -44,6 +44,8 @@ public class TicTacToe : MonoBehaviour
     private bool _boardIsFull = false;
     private bool _victory = false;
 
+    [SerializeField] private AudioSource _placePieceAudio;
+
     private void Awake()
     {
         _piecesList = new List<GameObject>();
@@ -54,6 +56,8 @@ public class TicTacToe : MonoBehaviour
     // Places a piece on the board
     public void PlacePiece(int tileIndex, Pieces piece)
     {
+        _placePieceAudio.Play();
+
         (int, int) newPieceCoordinates = GetCoordinatesFromTileIndex(tileIndex);
         if (Board[newPieceCoordinates.Item1, newPieceCoordinates.Item2] != Pieces.None)
         {

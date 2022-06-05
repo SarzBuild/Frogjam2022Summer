@@ -26,7 +26,10 @@ public class BulletSpawner : MonoBehaviour
 
     private List<GameObject> _bullets;
 
-    public bool Crying;
+    [HideInInspector] public bool Crying;
+    
+    [SerializeField] private AudioSource _tearsAudio;
+    [SerializeField] private AudioSource _bulletAudio;
 
     private void Awake()
     {
@@ -130,14 +133,24 @@ public class BulletSpawner : MonoBehaviour
             Vector2 movementDirection = new Vector2(Mathf.Cos(angleRadians), Mathf.Sin(angleRadians));
             bullet.GetComponent<Rigidbody2D>().velocity = movementDirection * firingMode.BulletSpeed;
 
-            // Change angle of firing mdoe
-            firingMode.FiringAngles[x] += firingMode.ShiftAngles;
+            // Change angle of firing
+            firingMode.FiringAngles[x] += firingMode.ShiftAngles;   
+        }
+
+        // Audio
+        if (firingMode.BulletType == Bullet.BulletTypes.Tear)
+        {
+            _tearsAudio.Play();
+        }
+        else
+        {
+            Debug.Log("bullet sound");
+            //_bulletAudio.Play();
         }
     }
 
     public void DespawnBullets()
-    {
-        Debug.Log("despawn");
+    {;
         foreach(GameObject bullet in _bullets)
         {
             Destroy(bullet);

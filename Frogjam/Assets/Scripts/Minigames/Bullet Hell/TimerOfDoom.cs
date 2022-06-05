@@ -9,6 +9,8 @@ public class TimerOfDoom : MonoBehaviour
     private float _maxTime = 30;
     private float _timeRemaining;
     private TextMeshProUGUI _UItimeRemaining;
+    [SerializeField] AudioSource _countdownAudioLow;
+    [SerializeField] AudioSource _countdownAudioHigh;
 
     private void Awake()
     {
@@ -26,13 +28,26 @@ public class TimerOfDoom : MonoBehaviour
 
         if(_timeRemaining < 0)
         {
-            // Trigger end of game sequence
+            // TODO: Trigger end of game sequence
         }
     }
 
     private void UpdateUI()
     {
+        string previousTimeRemaining = _UItimeRemaining.text;
         _UItimeRemaining.text = Mathf.Round(_timeRemaining).ToString();
+        if(_UItimeRemaining.text != previousTimeRemaining && _UItimeRemaining.text != "30")
+        {
+            // Clock shifted, play sound
+            if(_timeRemaining > 10)
+            {
+                _countdownAudioLow.Play();
+            }
+            else
+            {
+                _countdownAudioHigh.Play();
+            }
+        }
     }
 
     public void ResetTimer()

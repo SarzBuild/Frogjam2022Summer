@@ -9,6 +9,8 @@ public class BulletHellCharacter : MonoBehaviour
     [SerializeField] private Transform _respawnPoint;
     [HideInInspector] public List<BulletSpawner> BulletSpawners;
     [SerializeField] private TimerOfDoom _timerOfDoom;
+    [SerializeField] private AudioSource _deathSound;
+    [SerializeField] private AudioSource _damageSound;
     [Header("Parameters")]
     public float MaxHitPoints;
     [SerializeField] private float _minimumSpeed;
@@ -17,6 +19,8 @@ public class BulletHellCharacter : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private float _speed;
     [HideInInspector] public float CurrentHitPoints;
+
+    
 
     private void Awake()
     {
@@ -78,7 +82,6 @@ public class BulletHellCharacter : MonoBehaviour
         // Despawn bullets
         foreach(BulletSpawner spawner in BulletSpawners)
         {
-            Debug.Log("got a spawner");
             spawner.DespawnBullets();
         }
     }
@@ -92,7 +95,12 @@ public class BulletHellCharacter : MonoBehaviour
             // TODO: Update health bar UI
             if(CurrentHitPoints <= 0)
             {
+                _deathSound.Play();
                 Respawn();
+            }
+            else
+            {
+                _damageSound.Play();
             }
         }
     }

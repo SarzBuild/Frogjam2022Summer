@@ -222,6 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueMenuObject: {fileID: 2118061815}
   TextHolder: {fileID: 1132828980}
+  DialogueStartEvent: {fileID: 0}
+  DialogueEndEvent: {fileID: 0}
 --- !u!4 &245563480
 Transform:
   m_ObjectHideFlags: 0
@@ -249,14 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2999b31d6e70471c98179652a32a8e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LineSequence:
-  - {fileID: 11400000, guid: b6a499cfeecb14746a1319bd9e75746f, type: 2}
-  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
-  - {fileID: 11400000, guid: 143b8e794ef376e4abadeda6e0889081, type: 2}
-  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
-  - {fileID: 11400000, guid: bd6c0dbb3b424064fa3271b8b4dc77da, type: 2}
-  - {fileID: 11400000, guid: 48c1a5eeaa30723488f00d5a23556ec2, type: 2}
-  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}
+  SerializedDictionaryData: {fileID: 11400000, guid: a47d48652299a054d8800998d99d21c5, type: 2}
   DialogueIterator: {fileID: 245563479}
 --- !u!1 &663817769
 GameObject:
@@ -344,8 +339,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 245563481}
         m_TargetAssemblyTypeName: Dialogues.DialogueInitiator, Assembly-CSharp
-        m_MethodName: InitiateDialogue
-        m_Mode: 1
+        m_MethodName: SetInitialDialogue
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -416,7 +411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781568262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4971746, y: -0.053349335, z: -0.075605854}
+  m_LocalPosition: {x: 4.78, y: 4.14, z: -0.075605854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

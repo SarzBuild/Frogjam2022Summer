@@ -30,10 +30,10 @@ public class MapGenerator : MonoBehaviour
     public float DifficultyTimeIncreaseCooldown;
     private float _lastDifficultyIncreaseTime;
 
-    private List<GameObject> _easyObstacles;
-    private List<GameObject> _mediumObstacles;
-    private List<GameObject> _hardObstacles;
-    private List<GameObject> _extremeObstacles;
+    private List<GameObject> _easyObstacles = new List<GameObject>();
+    private List<GameObject> _mediumObstacles = new List<GameObject>();
+    private List<GameObject> _hardObstacles = new List<GameObject>();
+    private List<GameObject> _extremeObstacles = new List<GameObject>();
 
 
     private void Start()
@@ -72,13 +72,13 @@ public class MapGenerator : MonoBehaviour
                         _easyObstacles.Add(o);
                         break;
                     case ObjectDifficulty.Medium:
-                        _easyObstacles.Add(o);
+                        _mediumObstacles.Add(o);
                         break;
                     case ObjectDifficulty.Hard:
-                        _easyObstacles.Add(o);
+                        _hardObstacles.Add(o);
                         break;
                     case ObjectDifficulty.Extreme:
-                        _easyObstacles.Add(o);
+                        _extremeObstacles.Add(o);
                         break;
                 }
             }

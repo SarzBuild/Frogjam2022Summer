@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Dialogues;
 using UnityEngine;
 
 namespace Generics.Dictionaries
@@ -9,11 +10,11 @@ namespace Generics.Dictionaries
         private SerializedDictionaryData dictionaryData;
 
         [SerializeField]
-        private List<string> keys = new List<string>();
+        private List<int> keys = new List<int>();
         [SerializeField]
-        private List<int> values = new List<int>();
+        private List<DialogueData> values = new List<DialogueData>();
 
-        private Dictionary<string, int> myDictionary = new Dictionary<string, int>();
+        private Dictionary<int, DialogueData> myDictionary = new Dictionary<int, DialogueData>();
 
         public bool modifyValues;
 
@@ -47,7 +48,7 @@ namespace Generics.Dictionaries
         public void DeserializeDictionary()
         {
             Debug.Log("DESERIALIZATION");
-            myDictionary = new Dictionary<string, int>();
+            myDictionary = new Dictionary<int, DialogueData>();
             dictionaryData.Keys.Clear();
             dictionaryData.Values.Clear();
             for (int i = 0; i < Mathf.Min(keys.Count, values.Count); i++)

@@ -1,18 +1,24 @@
 ﻿using System.Collections.Generic;
+using Generics.Dictionaries;
 using UnityEngine;
 
 namespace Dialogues
 {
     public class DialogueInitiator : MonoBehaviour
     {
-        public DialogueData DialogueData;
-        public Dictionary<int, DialogueData> Dialogues = new Dictionary<int, DialogueData>();
+        public SerializedDictionaryData SerializedDictionaryData;
 
         public DialogueIterator DialogueIterator;
-    
-        public void InitiateDialogue()
+
+        public void SetInitialDialogue(int index)
         {
-            StartCoroutine(DialogueIterator.DialogueSequence(DialogueData));
+            var i = SerializedDictionaryData.Values[index];
+            InitiateDialogue(i);
+        }
+
+        private void InitiateDialogue(DialogueData dialogueData)
+        {
+            StartCoroutine(DialogueIterator.DialogueSequence(dialogueData));
         }  
     }
 }

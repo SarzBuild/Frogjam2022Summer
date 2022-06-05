@@ -15,6 +15,7 @@ public class SerializedDictionaryEditor : Editor
         {
             if (GUILayout.Button("Save changes"))
             {
+                Undo.RecordObject((SerializedDictionary)target, "DictSave");
                 ((SerializedDictionary)target).DeserializeDictionary();
             }
 

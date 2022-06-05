@@ -7,7 +7,7 @@ namespace Generics.Dictionaries
     [CreateAssetMenu(fileName = "newMasterDialogueManager", menuName = "Data/Dialogue/MasterDialogueManager")]
     public class SerializedDictionaryData : ScriptableObject
     {
-        [SerializeField]
+        [SerializeField] 
         List<int> keys = new List<int>();
         [SerializeField]
         List<DialogueData> values = new List<DialogueData>();

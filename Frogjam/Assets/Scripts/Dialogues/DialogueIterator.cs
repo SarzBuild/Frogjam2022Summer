@@ -12,6 +12,7 @@ namespace Dialogues
     {
         [SerializeField] public GameObject DialogueMenuObject;
         [SerializeField] public TextMeshProUGUI TextHolder;
+        
         [SerializeField] public GameEvent DialogueStartEvent;
         [SerializeField] public GameEvent DialogueEndEvent;
 
@@ -29,7 +30,8 @@ namespace Dialogues
             for (int i = 0; i < currentDialogue.Count; i++)
             {
                 LineIterator writer = new LineIterator();
-
+                currentDialogue[i].BeforeLineStartEvent.Event.Raise();
+                
                 if (TextHolder.text != "")
                 {
                     if (TextHolder.text[^1].ToString() != "")

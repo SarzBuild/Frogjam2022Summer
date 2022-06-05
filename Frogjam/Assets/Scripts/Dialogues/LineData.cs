@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Events;
+using UnityEngine;
 
 namespace Dialogues
 {
@@ -11,5 +12,9 @@ namespace Dialogues
         [Header("Time Parameters")]
         [SerializeField] public float Delay;
         [SerializeField] public float DelayBeforeNextLine;
+
+        [Header("Events")] 
+        [SerializeField] public GameEvent BeforeLineStartEvent;
+
     }
 }

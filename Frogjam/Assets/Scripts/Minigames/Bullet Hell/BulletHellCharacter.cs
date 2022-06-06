@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 public class BulletHellCharacter : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class BulletHellCharacter : MonoBehaviour
     [SerializeField] private TimerOfDoom _timerOfDoom;
     [SerializeField] private AudioSource _deathSound;
     [SerializeField] private AudioSource _damageSound;
+    public GameEventData StartPhase3;
     [Header("Parameters")]
     public float MaxHitPoints;
     [SerializeField] private float _minimumSpeed;
@@ -19,7 +21,7 @@ public class BulletHellCharacter : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private float _speed;
     [HideInInspector] public float CurrentHitPoints;
-
+    private float _deathCount = 0;
     
 
     private void Awake()
@@ -75,7 +77,15 @@ public class BulletHellCharacter : MonoBehaviour
 
     private void Respawn()
     {
-        // Decrement max lives
+        _deathCount++;
+        if(_deathCount == 3)
+        {
+            StartPhase3.Raise();
+        }
+        if(_deathCount > 3)
+        {
+
+        }
         CurrentHitPoints = MaxHitPoints;
         transform.position = _respawnPoint.position;
         _timerOfDoom.ResetTimer();

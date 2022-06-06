@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68b9fe974d9c264ca2ebec81ad1bd47, type: 3}
+  m_Name: newDialogue End F
+  m_EditorClassIdentifier: 
+  LineSequence:
+  - {fileID: 11400000, guid: 3dce2323c4e23bf4991f462e36ef7b69, type: 2}
+  - {fileID: 11400000, guid: a29a830d1171b5341aa65b5571276089, type: 2}
+  - {fileID: 11400000, guid: 40faafd410a130f4eaade2390c1cc514, type: 2}
+  - {fileID: 11400000, guid: 62a10be2b0127f3469613df79ef19774, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}

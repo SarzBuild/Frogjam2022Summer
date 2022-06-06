@@ -29,18 +29,13 @@ public class Player : MonoBehaviour
 
     public Transform ObjectHoldPosition;
     public SpriteRenderer SpriteRenderer;
-
+    
     public Vector2 Velocity { get; private set; }
     public Vector2 LastPosition { get; private set; }
 
     private void Awake()
     {
         Singleton();
-        float cameraHeight = 4.5f;
-        float desiredAspect = 16f/9f;
-        float aspect = Camera.main.aspect;
-        float ratio =  desiredAspect / aspect;
-        Camera.main.orthographicSize = cameraHeight * ratio;
     }
 
     private void Singleton()
@@ -88,7 +83,6 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         UpdatePlayerVelocity();
-        JTUtils.SetTime();
     }
     
     private void UpdatePlayerVelocity()

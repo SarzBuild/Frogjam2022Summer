@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ObjectDifficulty
 {
-    Easy, Medium, Hard
+    Easy, Medium, Hard, Extreme
 }
 
 public class ObstacleObject : MonoBehaviour

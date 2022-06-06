@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173acfdfb8c66de41af80583ea64b26c, type: 3}
   m_Name: newProfile
   m_EditorClassIdentifier: 
-  JumpHeight: 25
-  FallClamp: -12
+  JumpHeight: 20
+  FallClamp: -15
   MinFallSpeed: 50
   MaxFallSpeed: 90
   JumpApexThreshold: 10
-  JumpEndEarlyGravityModifier: 3
+  JumpEndEarlyGravityModifier: 6

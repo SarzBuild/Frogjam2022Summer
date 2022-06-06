@@ -18,7 +18,7 @@ namespace Generics
         public float Speed;
         private Vector3 _direction;
 
-        private void FixedUpdate()
+        private void Update()
         {
             _direction = Direction switch
             {

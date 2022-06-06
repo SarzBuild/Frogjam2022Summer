@@ -11,7 +11,7 @@ public class TimerOfDoom : MonoBehaviour
     private TextMeshProUGUI _UItimeRemaining;
     [SerializeField] AudioSource _countdownAudioLow;
     [SerializeField] AudioSource _countdownAudioHigh;
-
+    [HideInInspector] public bool TimerCountingDown;
     private void Awake()
     {
         _UItimeRemaining = gameObject.GetComponent<TextMeshProUGUI>();
@@ -19,18 +19,22 @@ public class TimerOfDoom : MonoBehaviour
     }
     private void Update()
     {
-        _timeRemaining -= Time.deltaTime;
-        UpdateUI();
-        if(_timeRemaining < 15)
+        if(TimerCountingDown)
         {
-            Froggerina.Crying = true;
-        }    
+            _timeRemaining -= Time.deltaTime;
+            UpdateUI();
+            if (_timeRemaining < 15)
+            {
+                Froggerina.Crying = true;
+            }
 
-        if(_timeRemaining < 0)
-        {
-            // TODO: Trigger end of game sequence
+            if (_timeRemaining < 0)
+            {
+                // END THE BULLET HELL
+            }
         }
     }
+        
 
     private void UpdateUI()
     {
@@ -56,5 +60,4 @@ public class TimerOfDoom : MonoBehaviour
         UpdateUI();
         Froggerina.Crying = false;
     }
-
 }

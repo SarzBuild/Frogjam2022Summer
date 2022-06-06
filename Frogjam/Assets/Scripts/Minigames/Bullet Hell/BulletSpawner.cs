@@ -26,17 +26,17 @@ public class BulletSpawner : MonoBehaviour
 
     private List<GameObject> _bullets;
 
-    [HideInInspector] public bool Crying;
+
+    [HideInInspector] public bool Attacking = false;
+    [HideInInspector] public bool Crying = false;
     
+    // Audio
     [SerializeField] private AudioSource _tearsAudio;
     [SerializeField] private AudioSource _bulletAudio;
 
     private void Awake()
     {
         // Define firing modes (this got so messy! I really should have used scriptable objects lol)
-        float[] machineGunAngles = new float[1];
-        MachineGun = new FiringMode(machineGunAngles, 0.05f, 5f, 20, 0, 1f, true, Bullet.BulletTypes.Small);
-        FiringModeList.Add(MachineGun);
         float[] sprinklerAngles = new float[1];
         sprinklerAngles[0] = Random.Range(0f, 360f);
         Sprinkler = new FiringMode(sprinklerAngles, 0.1f, 1f, 0, 25, 4, false, Bullet.BulletTypes.Large);
@@ -48,6 +48,9 @@ public class BulletSpawner : MonoBehaviour
         quadShotAngles[3] = - 30;
         QuadShot = new FiringMode(quadShotAngles, 0.4f, 2f, 10, 0, 3, true, Bullet.BulletTypes.Small);
         FiringModeList.Add(QuadShot);
+        float[] machineGunAngles = new float[1];
+        MachineGun = new FiringMode(machineGunAngles, 0.05f, 5f, 20, 0, 1f, true, Bullet.BulletTypes.Small);
+        FiringModeList.Add(MachineGun);
         float[] tearsAngles = new float[6];
         tearsAngles[0] = 60;
         tearsAngles[1] = 65;
@@ -69,26 +72,30 @@ public class BulletSpawner : MonoBehaviour
 
     private void Update()
     {
-        _firingTimer += Time.deltaTime;
-        if(_firingTimer >= CurrentFiringMode.RateOfFire)
+        if(Attacking)
         {
-            Shoot(CurrentFiringMode);
-            _firingTimer = 0;
-        }
+            _firingTimer += Time.deltaTime;
+            if (_firingTimer >= CurrentFiringMode.RateOfFire)
+            {
+                Shoot(CurrentFiringMode);
+                _firingTimer = 0;
+            }
 
-        _switchModeTimer += Time.deltaTime;
-        if(_switchModeTimer >= CurrentFiringMode.Duration)
-        {
-            SwitchFiringMode();
-            _switchModeTimer = 0;
-        }
+            _switchModeTimer += Time.deltaTime;
+            if (_switchModeTimer >= CurrentFiringMode.Duration)
+            {
+                SwitchFiringMode();
+                _switchModeTimer = 0;
+            }
 
-        _cryingTimer += Time.deltaTime;
-        if(Crying && _cryingTimer > Tears.RateOfFire)
-        {
-            _cryingTimer = 0;
-            Shoot(Tears);
+            _cryingTimer += Time.deltaTime;
+            if (Crying && _cryingTimer > Tears.RateOfFire)
+            {
+                _cryingTimer = 0;
+                Shoot(Tears);
+            }
         }
+        
     }
 
     private void SwitchFiringMode()

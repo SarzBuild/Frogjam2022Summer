@@ -15,3 +15,4 @@ MonoBehaviour:
   LineSequence:
   - {fileID: 11400000, guid: 01e966bcdd8ae9d41ab2ca5bf2641eef, type: 2}
   - {fileID: 11400000, guid: 287ad24a0fb7f854b999f58191e21061, type: 2}
+  - {fileID: 11400000, guid: 87f69d0cf1075d146b92dc3cfe2342d4, type: 2}

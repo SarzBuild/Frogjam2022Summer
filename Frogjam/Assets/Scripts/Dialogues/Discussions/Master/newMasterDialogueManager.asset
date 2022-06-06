@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a19a9b23574b74a948e3bc79211248, type: 3}
   m_Name: newMasterDialogueManager
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+  keys: 
+  values: []
+=======
   keys: 00000000
   values:
-  - {fileID: 11400000, guid: 245220b9e7e79b649bdb8d247ce433fd, type: 2}
+  - {fileID: 11400000, guid: 9f10ab8cd5770674dbc7d1cc26b4beb8, type: 2}
+>>>>>>> Stashed changes

@@ -1678,7 +1678,7 @@ TextureImporter:
         width: 75
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1699,7 +1699,7 @@ TextureImporter:
         width: 75
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1720,7 +1720,7 @@ TextureImporter:
         width: 75
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1736,12 +1736,12 @@ TextureImporter:
       name: FroggerinaIdleJoy3
       rect:
         serializedVersion: 2
-        x: 226
+        x: 225
         y: 880
         width: 75
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1762,7 +1762,7 @@ TextureImporter:
         width: 75
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1783,7 +1783,7 @@ TextureImporter:
         width: 75
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1804,7 +1804,7 @@ TextureImporter:
         width: 75
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1825,7 +1825,7 @@ TextureImporter:
         width: 75
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1849,9 +1849,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       FroggerinaTalkCrying4: -1482585222
-      FroggerinaDespawn3: -277984404
       FroggerinaSpawn2: 1980768431
       FroggerinaTalkPanicked4: -1839017234
+      FroggerinaTalkPanicked1: 515676944
       FroggerinaDeath8: -914030757
       FroggerinaInactive0: 1423239397
       FroggerinaDespawn7: 746560599
@@ -1886,8 +1886,8 @@ TextureImporter:
       FroggerinaTalkCrying2: 1906946736
       FroggerinaDespawn8: -1450133511
       FroggerinaTalkPanicked3: -1309196193
-      FroggerinaIdleCrying6: -1704065787
       FroggerinaDespawn0: 1832597940
+      FroggerinaIdleCrying6: -1704065787
       FroggerinaSpawn9: -1557258971
       FroggerinaDespawn9: 1534761248
       FroggerinaIdleJoy3: 1586430176
@@ -1929,7 +1929,7 @@ TextureImporter:
       FroggerinaDespawn11: 1027721700
       FroggerinaIdle1: 1126133832
       FroggerinaDeath4: 174456727
-      FroggerinaTalkPanicked1: 515676944
+      FroggerinaDespawn3: -277984404
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

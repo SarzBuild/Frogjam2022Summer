@@ -37,6 +37,7 @@ public class FrogressBar : MonoBehaviour
             {
                 // dialogue event, don't spawn froggerina just yet
                 _calledFirstDialogue = true;
+                SpawnFroggerina();
             }
         }
 
@@ -59,11 +60,14 @@ public class FrogressBar : MonoBehaviour
 
     public void SpawnFroggerina()
     {
+        Debug.Log("spawn");
         if (!Froggerina.activeInHierarchy)
         {
+            Debug.Log("SPAWN");
             Froggerina.SetActive(true);
             Froggerina.GetComponent<Animator>().SetBool("Spawning", true);
         }
-        
     }
+
+
 }

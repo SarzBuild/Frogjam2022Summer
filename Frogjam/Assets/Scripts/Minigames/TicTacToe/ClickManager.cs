@@ -10,7 +10,7 @@ public class ClickManager : MonoBehaviour
 
     private void Update()
     {
-        if(TicTacToeManager.IsPlayerTurn && !TicTacToeManager.Victory)
+        if(TicTacToeManager.IsPlayerTurn && !TicTacToeManager.Victory && !TicTacToeManager.BoardIsFull)
         {
             Vector2 mousePosition = GetMousePositionInWorld();
 

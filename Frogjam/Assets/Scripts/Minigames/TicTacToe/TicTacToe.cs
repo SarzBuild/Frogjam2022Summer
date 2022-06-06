@@ -41,10 +41,8 @@ public class TicTacToe : MonoBehaviour
     private (int, int) _lastFrogMove;
 
     // End of game state trackers
-    public bool BoardIsFull = false;
-    public bool Victory = false;
-
-    [SerializeField] private AudioSource _placePieceAudio;
+    private bool _boardIsFull = false;
+    private bool _victory = false;
 
     private void Awake()
     {
@@ -56,8 +54,6 @@ public class TicTacToe : MonoBehaviour
     // Places a piece on the board
     public void PlacePiece(int tileIndex, Pieces piece)
     {
-        _placePieceAudio.Play();
-
         (int, int) newPieceCoordinates = GetCoordinatesFromTileIndex(tileIndex);
         if (Board[newPieceCoordinates.Item1, newPieceCoordinates.Item2] != Pieces.None)
         {
@@ -112,7 +108,7 @@ public class TicTacToe : MonoBehaviour
             }
             if(x == 2)
             {
-                Victory = true;
+                _victory = true;
                 GameEnd();
             }
         }
@@ -125,7 +121,7 @@ public class TicTacToe : MonoBehaviour
             }
             if (y == 2)
             {
-                Victory = true;
+                _victory = true;
                 GameEnd();
             }
         }
@@ -151,7 +147,7 @@ public class TicTacToe : MonoBehaviour
                             }
                             if (x == 2)
                             {
-                                Victory = true;
+                                _victory = true;
                                 GameEnd();
                             }
                         }
@@ -180,7 +176,7 @@ public class TicTacToe : MonoBehaviour
                             }
                             if (x == 2)
                             {
-                                Victory = true;
+                                _victory = true;
                                 GameEnd();
                             }
                         }
@@ -205,7 +201,7 @@ public class TicTacToe : MonoBehaviour
             }
         }
         // Board is full
-        BoardIsFull = true;
+        _boardIsFull = true;
         GameEnd();
     }
 
@@ -417,30 +413,30 @@ public class TicTacToe : MonoBehaviour
     private void GameEnd()
     {
         StopAllCoroutines();
-        if(Victory)
+        if(_victory)
         {
             if(IsPlayerTurn)
             {
                 // Player won
-                Debug.Log("Player won!");
+                Debug.Log("Player won! Starting new game.");
             }
             else
             {
                 // Froggerina won
-                Debug.Log("Froggerina won!");
+                Debug.Log("Froggerina won! Starting new game.");
             }
         }
-        else if (BoardIsFull)
+        else if (_boardIsFull)
         {
             // Draw
-            Debug.Log("It's a draw!");
+            Debug.Log("It's a draw! Starting new game.");
         }
         else
         {
             Debug.Log("ERROR: game ended with no winner and no draw.");
         }
 
-        
+        StartNewGame();
     }
 
     // Starts a new game

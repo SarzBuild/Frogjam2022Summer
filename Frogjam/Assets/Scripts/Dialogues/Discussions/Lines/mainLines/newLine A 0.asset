@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: newLine A 0
   m_EditorClassIdentifier: 
   Input: . . .
-  Delay: 1.5
+  Delay: 0.3
   DelayBeforeNextLine: 8
+  BeforeLineStartEvent: {fileID: 11400000, guid: cb88f13c6070e2a419991d79a8596aa1, type: 2}

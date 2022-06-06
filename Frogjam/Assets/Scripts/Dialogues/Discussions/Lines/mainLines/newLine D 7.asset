@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f10d48919d455281762a2cdd604e42, type: 3}
   m_Name: newLine D 7
   m_EditorClassIdentifier: 
-  Input: that's why they made me so you'd have something to do while the game loads.
+  Input: So yeah ! that's why they made me so you'd have something to do while the
+    game loads.
   Delay: 0.3
   DelayBeforeNextLine: 10
+  BeforeLineStartEvent: {fileID: 11400000, guid: eef245a17b9b1d34f98d61cdd3263c4f, type: 2}

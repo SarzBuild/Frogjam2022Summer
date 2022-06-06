@@ -15,3 +15,4 @@ MonoBehaviour:
   Input: 'Don''t go easy on me Player [1]! '
   Delay: 1.5
   DelayBeforeNextLine: 8
+  BeforeLineStartEvent: {fileID: 11400000, guid: 397f659b38ea1a34983494776ea3236a, type: 2}

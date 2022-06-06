@@ -15,3 +15,4 @@ MonoBehaviour:
   Input: Wow...
   Delay: 0.3
   DelayBeforeNextLine: 10
+  BeforeLineStartEvent: {fileID: 11400000, guid: eef245a17b9b1d34f98d61cdd3263c4f, type: 2}

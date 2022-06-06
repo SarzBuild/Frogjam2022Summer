@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f10d48919d455281762a2cdd604e42, type: 3}
   m_Name: newLine D 5
   m_EditorClassIdentifier: 
-  Input: (It is taking quite a long to load though isn't it?) So yeah !
+  Input: '(It is taking quite a long to load though isn''t it?) '
   Delay: 0.3
   DelayBeforeNextLine: 10
+  BeforeLineStartEvent: {fileID: 0}

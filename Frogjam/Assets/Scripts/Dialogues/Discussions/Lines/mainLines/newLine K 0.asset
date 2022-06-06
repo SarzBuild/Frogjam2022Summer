@@ -15,3 +15,4 @@ MonoBehaviour:
   Input: What code?
   Delay: 0.3
   DelayBeforeNextLine: 10
+  BeforeLineStartEvent: {fileID: 11400000, guid: 56bce0f17b98f0e4cb158aab7dee1d76, type: 2}

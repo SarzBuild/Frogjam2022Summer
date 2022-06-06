@@ -15,3 +15,4 @@ MonoBehaviour:
   Input: THAT CAN'T BE!
   Delay: 0.3
   DelayBeforeNextLine: 10
+  BeforeLineStartEvent: {fileID: 11400000, guid: 38f4de23a4b1ac14f81ecb73cdac441a, type: 2}

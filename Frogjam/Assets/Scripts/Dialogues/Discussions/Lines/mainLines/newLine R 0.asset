@@ -15,3 +15,4 @@ MonoBehaviour:
   Input: So what if you're sorry?
   Delay: 0.3
   DelayBeforeNextLine: 10
+  BeforeLineStartEvent: {fileID: 11400000, guid: cb88f13c6070e2a419991d79a8596aa1, type: 2}

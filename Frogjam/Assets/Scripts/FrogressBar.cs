@@ -15,6 +15,8 @@ public class FrogressBar : MonoBehaviour
     public float[] _movementPercentages;
     private int _movesMade = 0;
 
+    private bool _calledFirstDialogue = false;
+
     public GameObject Froggerina;
 
     private void Update()
@@ -31,10 +33,10 @@ public class FrogressBar : MonoBehaviour
         {
             _startingProgress = _targetProgress;
             _timer = 0;
-            if(_startingProgress == _movementPercentages[0])
+            if(_startingProgress == _movementPercentages[0] && !_calledFirstDialogue)
             {
-                
-                SpawnFroggerina();
+                // dialogue event, don't spawn froggerina just yet
+                _calledFirstDialogue = true;
             }
         }
 

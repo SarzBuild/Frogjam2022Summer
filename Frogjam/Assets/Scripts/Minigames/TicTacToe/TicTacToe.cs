@@ -41,8 +41,8 @@ public class TicTacToe : MonoBehaviour
     private (int, int) _lastFrogMove;
 
     // End of game state trackers
-    private bool _boardIsFull = false;
-    private bool _victory = false;
+    public bool BoardIsFull = false;
+    public bool Victory = false;
 
     [SerializeField] private AudioSource _placePieceAudio;
 
@@ -112,7 +112,7 @@ public class TicTacToe : MonoBehaviour
             }
             if(x == 2)
             {
-                _victory = true;
+                Victory = true;
                 GameEnd();
             }
         }
@@ -125,7 +125,7 @@ public class TicTacToe : MonoBehaviour
             }
             if (y == 2)
             {
-                _victory = true;
+                Victory = true;
                 GameEnd();
             }
         }
@@ -151,7 +151,7 @@ public class TicTacToe : MonoBehaviour
                             }
                             if (x == 2)
                             {
-                                _victory = true;
+                                Victory = true;
                                 GameEnd();
                             }
                         }
@@ -180,7 +180,7 @@ public class TicTacToe : MonoBehaviour
                             }
                             if (x == 2)
                             {
-                                _victory = true;
+                                Victory = true;
                                 GameEnd();
                             }
                         }
@@ -205,7 +205,7 @@ public class TicTacToe : MonoBehaviour
             }
         }
         // Board is full
-        _boardIsFull = true;
+        BoardIsFull = true;
         GameEnd();
     }
 
@@ -417,30 +417,30 @@ public class TicTacToe : MonoBehaviour
     private void GameEnd()
     {
         StopAllCoroutines();
-        if(_victory)
+        if(Victory)
         {
             if(IsPlayerTurn)
             {
                 // Player won
-                Debug.Log("Player won! Starting new game.");
+                Debug.Log("Player won!");
             }
             else
             {
                 // Froggerina won
-                Debug.Log("Froggerina won! Starting new game.");
+                Debug.Log("Froggerina won!");
             }
         }
-        else if (_boardIsFull)
+        else if (BoardIsFull)
         {
             // Draw
-            Debug.Log("It's a draw! Starting new game.");
+            Debug.Log("It's a draw!");
         }
         else
         {
             Debug.Log("ERROR: game ended with no winner and no draw.");
         }
 
-        StartNewGame();
+        
     }
 
     // Starts a new game

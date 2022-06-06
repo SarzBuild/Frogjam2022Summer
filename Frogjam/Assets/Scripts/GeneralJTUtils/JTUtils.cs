@@ -11,6 +11,7 @@ namespace GeneralJTUtils
     /// </summary>
     public class JTUtils
     {
+        private static float time;
         /// <summary>
         /// <see cref="ToggleObjects"/> is a function that is used to enable or disable <param name="objects"></param>
         /// based on <param name="toggle"></param> value. 
@@ -30,7 +31,7 @@ namespace GeneralJTUtils
         /// </summary>
         public static bool CheckForCooldownTime(float timeWhenEventOccured, float cooldown)
         {
-            return (Time.time - timeWhenEventOccured + cooldown) <= 0;
+            return ((timeWhenEventOccured + cooldown) - time) <= 0;
         }
         
         /// <summary>
@@ -59,6 +60,16 @@ namespace GeneralJTUtils
             {
                 animator.SetBool(i,false);    
             }
+        }
+
+        public static float GetTime()
+        {
+            return time;
+        }
+
+        public static void SetTime()
+        {
+            time += Time.fixedDeltaTime;
         }
 
         public static void CheckForComponents(List<Component> components, Transform objectFromWhichToCheck)

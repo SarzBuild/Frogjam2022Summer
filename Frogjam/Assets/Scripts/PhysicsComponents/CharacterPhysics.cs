@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using Events;
+using GeneralJTUtils;
 using UnityEngine;
 
 namespace PhysicsComponents
@@ -8,7 +11,11 @@ namespace PhysicsComponents
         public Player Player;
 
         public CharacterProfileData Settings;
-        
+
+        public Animator Animator;
+
+        public MapGenerator MapGenerator;
+
         private bool _endedJumpEarly;
         private float _currentVerticalSpeed;
         private float _fallSpeed;
@@ -16,6 +23,7 @@ namespace PhysicsComponents
         
         public Vector2 Velocity { get; set; }
         public bool JumpingThisFrame { get; set; }
+        
         
         private void Start()
         {
@@ -32,12 +40,15 @@ namespace PhysicsComponents
 
         private void Update()
         {
+            if(MapGenerator.StateGame == MapGenerator.StateOfGame.Dead) return;
             UpdateHitResults();
             CalculateJump();
+            HandleAnimations();
         }
 
         private void FixedUpdate()
         {
+            if(MapGenerator.StateGame == MapGenerator.StateOfGame.Dead) return;
             CalculateGravity();
             CalculateJumpApex();
             SetVelocityY(_currentVerticalSpeed);
@@ -89,9 +100,27 @@ namespace PhysicsComponents
             
         }
 
-        private void OnHit()
+        private void HandleAnimations()
         {
-            
+            if (_currentVerticalSpeed > 0)
+            {
+                JTUtils.SetAnimations(Animator,"jumping", new List<string>(){"falling","running"});
+                return;
+            }
+            else if (_currentVerticalSpeed < 0)
+            {
+                JTUtils.SetAnimations(Animator,"falling", new List<string>(){"jumping","running"});
+                return;
+            }
+            JTUtils.SetAnimations(Animator,"running", new List<string>(){"falling","jumping"});
+        }
+
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            if (col.transform.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+            {
+                MapGenerator.OnDeath();
+            }
         }
     }
 }

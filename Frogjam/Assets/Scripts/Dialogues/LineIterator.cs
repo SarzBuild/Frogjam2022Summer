@@ -19,7 +19,7 @@ public class LineIterator
             {
                 for (int i = 0; i < input.Length; i++)
                 {
-                    Debug.Log(input.Length.ToString() + _indexCount);
+                    //Debug.Log(input.Length.ToString() + _indexCount);
                     holder.text += input[i];
                     _indexCount = i;
 

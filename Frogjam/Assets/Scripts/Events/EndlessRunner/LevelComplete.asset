@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173acfdfb8c66de41af80583ea64b26c, type: 3}
-  m_Name: newProfile
+  m_Script: {fileID: 11500000, guid: d96df891d1a84073919d13330e79d1d2, type: 3}
+  m_Name: LevelComplete
   m_EditorClassIdentifier: 
-  JumpHeight: 25
-  FallClamp: -12
-  MinFallSpeed: 50
-  MaxFallSpeed: 90
-  JumpApexThreshold: 10
-  JumpEndEarlyGravityModifier: 3

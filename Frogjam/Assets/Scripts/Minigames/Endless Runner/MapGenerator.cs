@@ -49,12 +49,6 @@ public class MapGenerator : MonoBehaviour
     public float DifficultyTimeIncreaseCooldown;
     private float _lastDifficultyIncreaseTime;
 
-<<<<<<< Updated upstream
-    private List<GameObject> _easyObstacles;
-    private List<GameObject> _mediumObstacles;
-    private List<GameObject> _hardObstacles;
-    private List<GameObject> _extremeObstacles;
-=======
     //private List<GameObject> _easyObstacles = new List<GameObject>();
     //private List<GameObject> _mediumObstacles = new List<GameObject>();
     //private List<GameObject> _hardObstacles = new List<GameObject>();
@@ -71,7 +65,6 @@ public class MapGenerator : MonoBehaviour
     {
         Singleton();
     }
->>>>>>> Stashed changes
 
     private void Singleton()
     {
@@ -126,12 +119,6 @@ public class MapGenerator : MonoBehaviour
                     case ObjectDifficulty.Hard:
                         _easyObstacles.Add(o);
                         break;
-<<<<<<< Updated upstream
-                    case ObjectDifficulty.Extreme:
-                        _easyObstacles.Add(o);
-                        break;
-=======
->>>>>>> Stashed changes
                 }
             }
         }

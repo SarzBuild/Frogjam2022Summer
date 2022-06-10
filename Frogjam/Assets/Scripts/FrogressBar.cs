@@ -60,10 +60,8 @@ public class FrogressBar : MonoBehaviour
 
     public void SpawnFroggerina()
     {
-        Debug.Log("spawn");
         if (!Froggerina.activeInHierarchy)
         {
-            Debug.Log("SPAWN");
             Froggerina.SetActive(true);
             Froggerina.GetComponent<Animator>().SetBool("Spawning", true);
         }

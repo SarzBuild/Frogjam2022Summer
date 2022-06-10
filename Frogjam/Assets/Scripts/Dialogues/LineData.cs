@@ -14,7 +14,7 @@ namespace Dialogues
         [SerializeField] public float DelayBeforeNextLine;
 
         [Header("Events")] 
-        [SerializeField] public GameEventData BeforeLineStartEvent;
+        [SerializeField] public GameEvent BeforeLineStartEvent;
 
     }
 }

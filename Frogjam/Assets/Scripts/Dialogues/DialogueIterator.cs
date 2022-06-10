@@ -13,13 +13,13 @@ namespace Dialogues
         [SerializeField] public GameObject DialogueMenuObject;
         [SerializeField] public TextMeshProUGUI TextHolder;
         
-        [SerializeField] public GameEventData DialogueStartEvent;
-        [SerializeField] public GameEventData DialogueEndEvent;
+        [SerializeField] public GameEvent DialogueStartEvent;
+        [SerializeField] public GameEvent DialogueEndEvent;
 
         public IEnumerator DialogueSequence(DialogueData dialogue)
         {
             JTUtils.ToggleObjects(new List<GameObject>(){DialogueMenuObject},true);
-            if(DialogueStartEvent != null) DialogueStartEvent.Raise();
+            DialogueStartEvent.Event.Raise();
             var currentDialogue = dialogue.LineSequence;
             
             if (TextHolder.text != "") //Checks to see if the base object is empty, if not, sets to empty.
@@ -30,7 +30,7 @@ namespace Dialogues
             for (int i = 0; i < currentDialogue.Count; i++)
             {
                 LineIterator writer = new LineIterator();
-                if(currentDialogue[i].BeforeLineStartEvent != null) currentDialogue[i].BeforeLineStartEvent.Raise();
+                currentDialogue[i].BeforeLineStartEvent.Event.Raise();
                 
                 if (TextHolder.text != "")
                 {
@@ -49,7 +49,7 @@ namespace Dialogues
                     TextHolder.text = "";
                 }
             }
-            if(DialogueEndEvent != null) DialogueEndEvent.Raise();
+            DialogueEndEvent.Event.Raise();
             JTUtils.ToggleObjects(new List<GameObject>(){DialogueMenuObject},false);
         }
     }
